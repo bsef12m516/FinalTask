@@ -1,0 +1,70 @@
+﻿@{
+    ViewBag.Title = "Login";
+}
+
+<!Doctype HTML>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login</title>
+        <link href="~/Content/bootstrap.css" rel="stylesheet"/>    
+        <script src="~/Scripts/bootstrap.js"></script>
+         <style>
+            .rcorners {
+                border-radius: 25px; 
+                border: 2px solid #000000 ;
+                padding: 20px;
+            }
+             .allign {
+                 font-family:'Monotype Corsiva';
+                 margin-top:10px ;
+                 margin-bottom:10px; 
+                 text-align:center
+
+             }
+             .textboxStyle {
+                 height:30px ; 
+                 width:50% ;
+                 font-size:small ; 
+                 border-radius: 25px; 
+                 border: 2px solid #D3D3D3; 
+                 padding: 20px;
+                 text-align:match-parent;          
+
+             }
+           
+        </style>
+    </head>
+        <body>
+
+
+            <br />
+            <br />
+            <br />
+
+            <div class="container-fluid box">
+                <div class="row" style="text-align:center">
+                    <div class="col-sm-6 col-sm-offset-3 ">
+                        <h3 class="allign" ><span class="glyphicon glyphicon-log-in"></span> Login</h3>
+                            
+                        <form class="rcorners"  action="/Home/VerifiedLogin" method="post">
+                                <input type="email" placeholder="Email"  name="Email" required class="textboxStyle"  />
+                                <br />
+                                <br />
+                                <input type="password" placeholder="Password" name="Password" required class="textboxStyle" />
+                                <br />
+                                <br />
+                                <button type="submit" class="btn btn-primary" style="text-align:center;height:40px;width:50%">Login</button>
+                        </form>
+                    </div>
+                </div>
+                <div style="text-align:center">
+                <br />
+                    <h4 style="text-align:center">Don't have any account?</h4><a href="/Home/SignUp" style="text-decoration:none; text-align:center;font-size:20px">Register Yourself</a>
+                </div>
+            </div>
+        @section Scripts{
+            @Scripts.Render("~/bundles/jqueryval")
+            }
+    </body>
+</html>
